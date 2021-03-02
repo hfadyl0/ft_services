@@ -14,7 +14,7 @@ eval $(minikube docker-env)
 # kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.9.3/manifests/metallb.yaml
 minikube addons enable metallb;
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-kubectl apply -f metallb.yaml
+kubectl apply -f ./srcs/Yaml/metallb.yaml
 
 # building the fucking images: 
 
